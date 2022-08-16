@@ -1,0 +1,10 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Sanjali Nagare/Auto-Merge@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          number: 1
