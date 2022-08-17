@@ -9676,7 +9676,7 @@ const main = async () => {
   const number = core.getInput('number')
   const method = core.getInput('method')
   const repoString = core.getInput('repo')
-  console.log(`Hello ${method}!`);
+  
  
 
   let repoObject
