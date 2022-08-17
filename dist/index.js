@@ -9684,7 +9684,7 @@ const main = async () => {
     repoObject = context.repo
   }
 
-  const octokit = new github.GitHub(token);
+  const octokit = new GitHub.GitHub(token);
 
   await octokit.pulls.merge({
     ...repoObject,
