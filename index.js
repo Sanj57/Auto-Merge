@@ -9,7 +9,8 @@ const main = async () => {
   const number = core.getInput('number')
   const method = core.getInput('method')
   const repoString = core.getInput('repo')
-  // console.log('its working');
+  console.log(`Hello ${method}!`);
+ 
 
   let repoObject
   if (repoString) {
@@ -25,7 +26,9 @@ const main = async () => {
     ...repoObject,
     pull_number: number,
     merge_method: method
+    
   })
+  
 }
 
 main().catch(err => core.setFailed(err.message))

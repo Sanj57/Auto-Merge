@@ -10,7 +10,7 @@ inputs:
     required: true
   method:
     description: 'Green button merge type (merge, squash, rebase)'
-    default: true
+    merge_method: merge 
     required: true
   repo:
     description: 'Pull Request repo in owner/repo format'
