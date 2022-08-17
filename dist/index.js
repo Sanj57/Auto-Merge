@@ -9667,7 +9667,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 const core = __nccwpck_require__(6024)
-const { GitHub, context } = __nccwpck_require__(5016)
+const github = __nccwpck_require__(5016)
 
 const main = async () => {
   const token = core.getInput('github-token')
@@ -9681,10 +9681,10 @@ const main = async () => {
     const [owner, repo] = repoString.split('/')
     repoObject = { owner, repo }
   } else {
-    repoObject = context.repo
+    repoObject = github.context.repo
   }
 
-  const octokit = new GitHub(GitHub_Token);
+  const octokit = new github.getOctokit(token);
 
   await octokit.pulls.merge({
     ...repoObject,

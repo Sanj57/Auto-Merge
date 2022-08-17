@@ -1,6 +1,6 @@
 'use strict'
 const core = require('@actions/core')
-const { GitHub, context } = require('@actions/github')
+const github = require('@actions/github')
 
 const main = async () => {
   const token = core.getInput('github-token')
@@ -14,10 +14,10 @@ const main = async () => {
     const [owner, repo] = repoString.split('/')
     repoObject = { owner, repo }
   } else {
-    repoObject = context.repo
+    repoObject = github.context.repo
   }
 
-  const octokit = new GitHub(GitHub_Token);
+  const octokit = new github.getOctokit(token);
 
   await octokit.pulls.merge({
     ...repoObject,
